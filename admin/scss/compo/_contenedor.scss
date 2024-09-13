@@ -1,0 +1,17 @@
+.contenedor{
+    display:grid;
+    margin:0;
+    padding:0;
+    width: 100%;
+    min-height: 950px;
+    row-gap:11px;
+    column-gap:11px;
+    background-color: color('blanco');
+    grid-template-columns:50px 2.5fr 7.5fr 2.5fr 50px;
+    grid-template-rows:50px 190px 50px minmax(600px, auto) 50px;
+    grid-template-areas:"margi nav      nav      nav      margd"
+                        "margi headerr  headerr  headerr  margd" 
+                        "margi main_nav main_nav main_nav margd"
+                        "margi asidea   main     asideb   margd"
+                        "margi footer   footer   footer   margd";
+}

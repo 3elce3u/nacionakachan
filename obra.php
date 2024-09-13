@@ -7,13 +7,71 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
 ?>
 <!DOCTYPE html>
 <html class="no-js" lang="es-ES">
+<?php
+require_once("class/class.php");
+$novel=new Obra();
+$edi=$novel->getobrabyid($_GET['obra_id'],$_GET['obra_nombre']);
+if (!empty($edi)) 
+{
+    $vol=$novel->getvideosbyobraid($_GET['obra_id']);
+    if(!empty($vol))
+    {
+        $numerodevolumenes = (sizeof($vol));
+    }
+} 
+else 
+{
+    header("Location: obras.php");
+}
+
+$ogurl = "http://localhost/obra.php?obra_id=" . $_GET['obra_id'] . "&obra_nombre=" . $_GET['obra_nombre'] . "";
+$ogimage = "http://localhost/" . $edi[0]['obra_caratula'] . "";
+$ogdescript ="".$edi[0]['tipo']." ".$edi[0]['obra_nombre']." narrado en español ";
+$ogtitle = $_GET['obra_nombre'];
+$ogauthor = "";
+$ogtype = "".$edi[0]['tipo']."";
+$ogsite_name = "";
+$fbapp_id = "";
+/*echo $_GET['obra_id']."<br>";
+echo $_GET['obra_nombre']."<br>";
+echo $edi[0]['obra_nombre']."<br>";*/
+?>
 
 <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="En esta web podras leer o escuchar novelas ligeras japonesas totalmente gratis.">
-    <title>OBRAS</title>
+    <!--ETIQUETAS BUSCADOR-->
+    <meta charset="utf-8">
+    <meta name="Description" content=" <?php echo $edi[0]['tipo'].` `.$edi[0]['obra_nombre'] . ` narrado en español`; ?> ">
+    <meta name="Keywords" content=" <?php echo $edi[0]['tipo'].` `.$edi[0]['obra_nombre'] . ` narrado en español`; ?> ">
+    <!--CONFIGURACION VIEWPORT-->
+    <meta name="viewport"
+        content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=-5.0">
+    <!--ETIQUETAS TWITTER-->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $ogtitle; ?>">
+    <meta name="twitter:description" content="<?php echo $ogdescript; ?>">
+    <meta name="twitter:site" content="@USUARIO DE TWITTER">
+    <meta name="twitter:creator" content="@USUARIO DE TWITTER">
+    <meta name="twitter:image:src" content="<?php echo $ogimage; ?>">
+    <!--ETIQUETAS FACEBOOK-->
+    <meta name="og:url" content="<?php echo $ogurl; ?>">
+    <meta name="og:image" content="<?php echo $ogimage; ?>">
+    <meta name="og:image:width" content="220">
+    <meta name="og:image:height" content="320">
+    <meta name="og:title" content="<?php echo $ogtitle; ?>">
+    <meta name="og:type" content="<?php echo $ogtype; ?>">
+    <meta name="og:book:author" content="<?php echo $ogauthor; ?>">
+    <meta name="og:description" content="<?php echo $ogdescript; ?>">
+    <meta name="og:site_name" content="<?php echo $ogsite_name; ?>">
+    <meta name="og:locale" content="es_ES">
+    <meta name="fb:app_id" content="<?php echo $fbapp_id; ?>">
+    <!--ETIQUETAS GOOGLE obsoleto desde 20 04 2019 -->
+    <meta itemprop="name" content="<?php echo $ogtitle; ?>">
+    <meta itemprop="description" content="<?php echo $ogdescript; ?>">
+    <meta itemprop="image" content="<?php echo $ogimage; ?>">
+    <!--ENLACES CSS-->
+    <title>OBRA</title>
     <!-- style and script resources -->
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.6.3.min.js"></script>
@@ -22,7 +80,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
     <link rel="icon" href="recursos/iconos/favicon.ico" sizes="32x32" />
 </head>
 
-<body id="body">
+<body id="body" onload="obra(<?php echo '`'.$_GET['obra_id'] . '`,`' . $_GET['obra_nombre'] . '`'; ?>),patro()">
     <!-- PANEL DE ALERTA 1 -->
     <div class="alert-bien" id="bien">
         <div class="close" onclick="$('#bien').toggle('none');"> x </div>
@@ -43,22 +101,12 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
         <div class="headerr" id="headerr"></div>
         <div class="main_nav" id="main_nav">
             <form method="post" action="index.php" id="form1"></form>
-            <form method="post" action="novelas.php" id="form2"></form>
+            <form method="post" action="obras.php" id="form2"></form>
             <div class="menuno" id="menuno">
                 <ul>
                     <li class="main__boton1" onclick="$('#form1').submit();">INICIO</li>
                     <li class="main__boton1" onclick="$('#form2').submit();">OBRAS</li>
                 </ul>
-            </div>
-            <div class="criterio" id="criterio" onclick="cazargenero(0,'',0);">
-            </div>
-            <div class="filt" id="filt">
-
-                <div class="search" id="search">
-                    <form id="bush" method="POST">
-                        <input type="text" class="buscador" name="buscador" id="buscador" spellcheck="false" placeholder="Introduce tu busqueda...">
-                    </form>
-                </div>
             </div>
             <div class="mendos" id="mendos">
                 <ul class="icones" <?php if (isset($_SESSION['usuario_id'])) { ?>
@@ -88,28 +136,8 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     </li>
                 </ul>
             </div>
-
-
-        </div>
-        <div class="filtros" id="filtros">
-            <h2 class="filtcab">FILTROS</h2>
-            <div class="ico_ocul" id="ico_ocul">
-                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#filtro').toggle();"
-                    alt="menu" />
-            </div>
-            <div class="filtro" id="filtro">
-
-            </div>
         </div>
         <div class="asidea" id="asidea">
-            <h2 class="filtcab">FILTROS</h2>
-            <div class="ico_oculf" id="ico_ocul">
-                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#filtroo').toggle();"
-                    alt="menu" />
-            </div>
-            <div class="filtroo" id="filtroo">
-
-            </div>
             <h2>NOTICIAS</h2>
             <div class="ico_ocul" id="ico_ocul">
                 <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#noticias').toggle();"
@@ -128,31 +156,33 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     style="height:auto; width: 100%; margin:50px 0px; cursor: pointer; display: block;" />
             </div>
         </div>
-
         <div class="main" id="main">
-            <h2>OBRAS</h2>
-            <div class="novelas" id="novelas">
+            <h2>OBRA</h2>
+            <div class="novela" id="novela">
 
             </div>
         </div>
         <div class="asideb" id="asideb">
-            <h2>ÚLTIMOS CAPÍTULOS</h2>
+        <h2>ÚLTIMOS CAPÍTULOS</h2>
             <div class="ico_ocul" id="ico_ocul">
-                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#nue_vol').toggle();" alt="menu" />
+                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#nue_vol').toggle();"
+                    alt="menu" />
             </div>
             <div class="nue_vol" id="nue_vol">
 
             </div>
             <h2>REDES SOCIALES</h2>
             <div class="ico_ocul" id="ico_ocul">
-                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#nue_nov').toggle();" alt="menu" />
+                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#nue_nov').toggle();"
+                    alt="menu" />
             </div>
             <div class="nue_nov" id="nue_nov">
 
             </div>
             <h2>PATROCINAR OBRA</h2>
             <div class="ico_ocul" id="ico_ocul">
-                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#top_des').toggle();" alt="menu" />
+                <img src='recursos/iconos/menu.webp' height="25" width="25" onClick="$('#top_des').toggle();"
+                    alt="menu" />
             </div>
             <div class="top_des" id="top_des">
             <?php 
@@ -160,11 +190,6 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                 {
             ?>
                 <table>
-                <tr>
-                        <td colspan="2" style="height:30px;">
-                          <div id="msg" height:30px; width:98%;></div>
-                        </td>
-                    </tr>
                     <tr>
                         <td style="height:30px;">
                             <b>USUARIO</b>
@@ -191,7 +216,7 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                         </td>
                         <td>
                             <?php 
-                               echo "50000";
+                               echo "50000 Puntos";
                             ?>
                         </td>
                     </tr>
@@ -264,7 +289,6 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] == true) {
                     }
                 }
                 ?>
-                   
             </div>
         </div>
         <div class="footer" id="footer"></div>
