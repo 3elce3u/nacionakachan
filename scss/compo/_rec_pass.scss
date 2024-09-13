@@ -1,0 +1,15 @@
+.rec_pass{
+    @extend .login;
+    .close{
+        @extend .close;
+    }
+    h3{
+        @extend h3;
+    }
+    input{
+        @extend input;
+    }
+    .btn-rec_pass{
+        @extend .btn-login;
+    }
+}

@@ -1,0 +1,34 @@
+.filtros{
+    display:none;
+}
+@media only screen and (max-width: 800px){
+    .filtros
+    {
+        grid-area: filtros; 
+        display: inline-block;
+        h2{
+            font-size: 18px;
+            display:inline-block;
+            width: 100%;
+            text-align: center;
+            background-color: color('naranja');
+            padding:11px 0;
+            margin: 0;
+            border-radius:5px 5px 0 0;
+            margin-bottom: 11px;
+        }
+        .filtro{
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content:space-around!important;
+            align-content: space-around!important;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            height: auto;
+            border-radius:5px 5px 0 0;
+        }
+    }
+}

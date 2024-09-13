@@ -1,0 +1,36 @@
+@import
+'misc/variables',
+'misc/mixins',
+'misc/funciones',
+'compo/contenedor',
+'compo/contenedor2',
+'compo/comentarios',
+'compo/pruebas',
+'compo/volumen',
+'compo/alerts',
+'compo/login',
+'compo/perfil',
+'compo/registro',
+'compo/rec_pass',
+'compo/new_pass',
+'compo/margenes',
+'compo/botones',
+'compo/nav',
+'compo/header',
+'compo/main_nav',
+'compo/filtros',
+'compo/asidea',
+'compo/noticias',
+'compo/main',
+'compo/novela',
+'compo/asideb',
+'compo/asides',
+'compo/cards',
+'compo/footer';
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}

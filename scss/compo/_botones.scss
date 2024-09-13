@@ -1,0 +1,287 @@
+    ul 
+    {
+        list-style: none;
+        .main__boton1 {
+            float: left;
+            position: relative;
+            top:-17px;
+            left:-40px;
+            width: 125px;
+            border: double 5px #fff;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.25);
+            display: inline-block;
+            padding: 12px 15px 14px 15px;
+            margin: 0px;
+            outline: none;
+            overflow: hidden;
+            box-sizing: border-box;
+            text-align: center;
+            line-height: 16px;
+            border-radius: 5px;
+            box-shadow: -105px 160px 35px 10px rgba(0, 0, 0, 0.01), inset -35px 16px 3px 7px rgba(255, 255, 255, 0.06);
+            transition-duration: .7s ;
+            cursor: pointer;
+            position: relative;
+            &::before{
+                content: "";
+                position: absolute;
+                height: 0px;
+                width: 5px;
+                background-color: white;
+                left: 0px;
+                top: 0px;
+                transition-duration: .3s;
+                transition-delay: 0s;
+                box-shadow: 111px 50px white;
+                display: block;
+            }
+            &::after{
+                content: "";
+                position: absolute;
+                height: 5px;
+                width: 0px;
+                background-color: white;
+                left: 0px;
+                bottom: 0px;
+                transition-duration: .4s;
+                transition-delay: .3s;
+                box-shadow: 115px -37px white;
+                display: block;
+            }
+            &:hover{
+                box-shadow: -1px 2px 3px 3px rgba(0, 0, 0, 0.06), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.4);
+                background-color: rgba(0, 0, 123, 0.25);
+            }
+            &:hover::before{
+                content: "";
+                height: 100%;
+                box-shadow: 111px 0px white;
+            }
+            &:hover::after{
+                content: "";
+                width: 100%;
+                box-shadow: 0px -37px white;
+            }
+            &:active{
+                transition-duration: .3s;
+                transition-delay: 0s;
+                background-color: rgba(0, 120, 0, 0.15);
+                box-shadow: -1px 2px 13px 13px rgba(0, 0, 0, 0), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+    .boton {
+        float: left;
+        border: double 5px #fff;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.25);
+        display: inline-block;
+        padding: 12px 15px 14px 15px;
+        margin: 0px;
+        outline: none;
+        overflow: hidden;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 16px;
+        border-radius: 5px;
+        box-shadow: -105px 160px 35px 10px rgba(0, 0, 0, 0.01), inset -35px 16px 3px 7px rgba(255, 255, 255, 0.06);
+        transition-duration: .7s;
+        width: 100%;
+        height: 53px;
+        cursor: pointer;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 0px;
+            width: 5px;
+            background-color: white;
+            left: 0px;
+            top: 0px;
+            transition-duration: .3s;
+            transition-delay: 0s;
+            box-shadow: 149px 50px white;
+            display: block;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 0px;
+            background-color: white;
+            left: 0px;
+            bottom: 0px;
+            transition-duration: .4s;
+            transition-delay: .3s;
+            box-shadow: 155px -38px white;
+            display: block;
+        }
+        &:hover {
+            box-shadow: -1px 2px 3px 3px rgba(0, 0, 0, 0.06), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.4);
+            background-color: rgba(0, 0, 123, 0.25);
+        }
+        &:hover::before {
+            content: "";
+            height: 100%;
+            box-shadow: 149px 0px white;
+        }
+        &:hover::after {
+            content: "";
+            width: 100%;
+            box-shadow: 0px -38px white;
+        }
+        &:active {
+            transition-duration: .3s;
+            transition-delay: 0s;
+            background-color: rgba(0, 120, 0, 0.15);
+            box-shadow: -1px 2px 13px 13px rgba(0, 0, 0, 0), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.8);
+        }
+        
+    }
+    .dento_boton{
+        width:100%;
+        height: 100%; 
+        border-radius:10px; 
+        outline:none; 
+        border-style:none; 
+        background-color:rgba(0,0,0,0.00);
+        cursor: pointer;
+    }
+    .dentro_boton{
+        width:100%;
+        height: 100%; 
+        border-radius:10px; 
+        outline:none;
+        color: red ;
+        border-style:none; 
+        background-color:color('verdecillo');
+        cursor: pointer;
+    }
+    .ico_ocul{
+        position: relative;
+        top:-46px;
+        left:88%;
+        height:25px; 
+        width:25px; 
+        display:inline-block;
+        cursor: pointer; 
+        background-color:rgba(23,224,40,0.05);
+        z-index:100;
+        transition: 0.3s;
+        &:hover{
+            transform:scale(0.9);
+            transition: 0.3s;
+        }
+    }
+    .ico_oculf{
+        position: relative;
+        top:-46px;
+        left:88%;
+        height:25px; 
+        width:25px; 
+        display:inline-block;
+        cursor: pointer; 
+        background-color:rgba(23,224,40,0.05);
+        z-index:100;
+        transition: 0.3s;
+        &:hover{
+            transform:scale(0.9);
+            transition: 0.3s;
+        }
+    }
+    .boton2 {
+        width: 40px;
+        height: 45px;
+        float: left;
+        border: double 5px #fff;
+        font-weight: bold;
+        background-color: rgba(0, 0, 0, 0.25);
+        display: inline-block;
+        padding: 9px 5px;
+        margin:auto;
+        outline: none;
+        overflow: hidden;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 16px;
+        border-radius: 3px;
+        box-shadow: -105px 160px 35px 10px rgba(0, 0, 0, 0.01), inset -35px 16px 3px 7px rgba(255, 255, 255, 0.06);
+        transition-duration: .7s;
+        cursor: pointer;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            height: 0px;
+            width: 3px;
+            background-color: white;
+            left: 0px;
+            top: 0px;
+            transition-duration: .3s;
+            transition-delay: 0s;
+            box-shadow: 28px 34px white;
+            display: block;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            height: 5px;
+            width: 0px;
+            background-color: white;
+            left: 0px;
+            bottom: 0px;
+            transition-duration: .4s;
+            transition-delay: .3s;
+            box-shadow: 30px -30px white;
+            display: block;
+        }
+        &:hover {
+            box-shadow: -1px 2px 3px 3px rgba(0, 0, 0, 0.06), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.4);
+            background-color: rgba(0, 0, 123, 0.25);
+            &::before {
+            content: "";
+            height: 100%;
+            box-shadow: 28px 0px white;
+            }
+            &::after {
+                content: "";
+                width: 100%;
+                box-shadow: 0px -30px white;
+            }
+        }
+        &:active {
+            transition-duration: .3s;
+            transition-delay: 0s;
+            background-color: rgba(0, 120, 0, 0.15);
+            box-shadow: -1px 2px 13px 13px rgba(0, 0, 0, 0), inset -5px 6px 1px 4px rgba(255, 255, 255, 0.8);
+        }
+        .paginet{
+            background-color:rgba(0,0,0,0.00); 
+            height:100%; 
+            width:100%; 
+            outline:none; 
+            text-align:center; 
+            cursor:pointer; 
+            justify-content: center;
+            font-size: 16px;
+        }
+    }
+    @media only screen and (max-width: 800px){
+        .ico_oculf{
+            position: relative;
+            top:-46px;
+            left:88%;
+            height:25px; 
+            width:25px; 
+            display:none;
+            cursor: pointer; 
+            background-color:rgba(23,224,40,0.05);
+            z-index:100;
+            transition: 0.3s;
+            &:hover{
+                transform:scale(0.9);
+                transition: 0.3s;
+            }
+        }
+    }

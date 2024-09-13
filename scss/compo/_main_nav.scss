@@ -1,0 +1,264 @@
+.main_nav{
+    grid-area: main_nav;
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding:0;
+    background-color: color('opaco');
+    display: grid;
+    grid-template-columns:30% 10% 40% 20% ;
+    grid-template-rows: 50px;
+    grid-template-areas:"botones crit buscador login";
+}
+@media only screen and (max-width: 1100px){
+    .main_nav{
+        grid-area: main_nav;
+        height: 100%;
+        width:100%;
+        margin: 0;
+        padding:0;
+        grid-row-gap: 10px;
+        background-color: color('opaco');
+        display: grid;
+        grid-template-columns: 50% 25% 25% ;
+        grid-template-rows: 50px 50px;
+        grid-template-areas: "botones  crit     login    "
+                             "buscador buscador buscador";           
+    }
+}
+@media only screen and (max-width: 890px){
+    .main_nav{
+        grid-area: main_nav;
+        height: 100%;
+        width:100%;
+        margin: 0;
+        padding:0;
+        grid-row-gap: 10px;
+        background-color: color('opaco');
+        display: grid;
+        grid-template-columns: 50% 25% 25% ;
+        grid-template-rows: 50px 50px;
+        grid-template-areas: "botones  crit     login   "
+                             "buscador buscador buscador";    
+    }
+}
+@media only screen and (max-width: 800px){
+    .main_nav{
+        grid-area: main_nav;
+        height: 100%;
+        width:100%;
+        margin: 0;
+        padding:0;
+        grid-row-gap: 10px;
+        background-color: color('opaco');
+        display: grid;
+        grid-template-columns:50% 25% 25%;
+        grid-template-rows: 50px 50px;
+        grid-template-areas:"botones  crit     login   "
+                            "buscador buscador buscador";   
+    }
+}
+@media only screen and (max-width: 618px){
+    .main_nav{
+        grid-area: main_nav;
+        height: 100%;
+        width:100%;
+        margin: 0;
+        padding:0;
+        grid-row-gap: 10px;
+        background-color: color('opaco');
+        display: grid;
+        grid-template-columns:35% 65% ;
+        grid-template-rows: 50px 50px 50px;
+        grid-template-areas:"botones  login   "
+                            "botones  crit    "
+                            "buscador buscador";   
+    }
+}
+@media only screen and (max-width: 385px){
+    .main_nav{
+        grid-area: main_nav;
+        height: 100%;
+        width:100%;
+        margin: 0;
+        padding:0;
+        grid-row-gap: 10px;
+        background-color: color('opaco');
+        display: grid;
+        grid-template-columns:45% 55% ;
+        grid-template-rows: 50px 50px 50px;
+        grid-template-areas:"botones  login   "
+                            "botones  crit    "
+                            "buscador buscador";   
+    }
+}
+    .menuno{
+        grid-area: botones;
+    }
+    .criterio{
+        grid-area: crit;
+        display:inline-flex;
+        width: 90%;
+        background-color:rgba(208, 91, 255, 0.1);
+        border-radius: 5px;
+        border:double 3px rgba(208, 91, 255, 1);
+        height: 87%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        text-align: center;
+        margin-top:0;
+        cursor:pointer;
+        visibility:hidden;
+        transition: 0.3s;
+        color:rgba(208, 91, 255, 1);
+        &:hover{
+            transform: scale(0.98);
+            transition: 0.3s;
+            border:double 3px color(blanco);
+            background-color:rgba(208, 91, 255, 1);
+            color:color(blanco);
+        }
+    }
+    .texto
+    {
+        font-size: 15px;    
+    }
+    .filt{
+        grid-area: buscador;
+        height: 100%;
+        width:100%;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        box-sizing: border-box;
+        justify-content:flex-start;
+        
+        .search{
+            width:100%;
+            height: 100%;
+            margin-left:10px;
+            .buscador{
+                height:100% !important;
+                width: 90% !important;
+                font-size:18px;
+                padding:13px;
+                border-radius: 5px;
+                background-color: color(grisc);
+                &:focus{
+                    border:double 2px color(lila);
+                    outline: none;
+                    border-top-color:rgba(208, 91, 255, 1);
+                    border-left-color:rgba(208, 91, 255, 1);
+                }
+            }
+        }
+            
+    }
+    .mendos{
+        grid-area: login;
+        width:100%;
+        .icones{
+            border-radius: 100%;
+            display: inline-flex;
+            flex-direction: row;
+            margin: auto 0;  
+            align-self: flex-start;
+            justify-self:flex-start;
+            align-content: flex-start;
+            .jur{
+                border-radius: 100%;
+                display: inline-flex;
+                flex-direction: row;
+                margin: auto 0;  
+                align-self: flex-start;
+                justify-self:flex-start;
+                align-content: flex-start;
+                .icolog{
+                    float: left;
+                    margin-top:5px;
+                    margin-right: 1%;
+                    height: 34px;
+                    width: 34px;
+                    border: solid 3px color('naranja');
+                    border-radius: 100%;
+                    display: inline-flex;
+                    flex-direction: column;
+                    box-shadow: 3px 3px 3px rgba(0,0,0, .4);
+                    transition: 0.5s;
+                    background-color: color('opaco');
+                    &:hover{
+                        border: solid 3px color('rosa');
+                        box-shadow: 30px 30px 30px rgba(0,0,0, .1);
+                        transform: scale(1.1);
+                        transition: 0.5s;
+                        cursor: pointer;
+                    }
+                    &:hover .unoo{
+                        border: solid 3px color('rosa');
+                        border-bottom: 0px;
+                        transform: scale(1.1);
+                        transition: 0.5s;
+                    }
+                    &:hover .doss{
+                        border: solid 3px color('rosa');
+                        border-top:0px;
+                        border-bottom: 0px;
+                        transform: scale(1.1);
+                        transition: 0.5s;
+                    }
+                    .unoo{
+                        align-self: center;
+                        height: 12px;
+                        width: 14px;
+                        border: solid 3px color('naranja');
+                        border-radius: 100%;
+                        border-bottom: 0px;
+                        transition: 0.5s;
+                        background-color: color('opaco');
+                    }
+                    .doss{
+                        align-self: center;
+                        height: 18px;
+                        width: 28px;
+                        border: solid 3px color('naranja');
+                        border-radius: 100%;
+                        border-top:0px;
+                        border-bottom: 0px;
+                        transition: 0.5s;
+                        background-color: color('opaco');
+                    }
+                }
+                .pan_per{
+                    display:none;
+                    flex-wrap: nowrap;
+                    flex-direction: column;
+                    position: absolute;
+                    margin-top: 44px;
+                    margin-left: -30px;
+                    .un{
+                        border: 2px solid color('grisc');
+                        background-color: color('azul');
+                        font-weight: bold;
+                        color: color('blanco');
+                        margin: 0;
+                        padding: 7px;
+                        z-index: 2;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        &:hover{
+                            border: 2px solid color('blanco');
+                            color: color('blanco');
+                            background-color: color('rosa');
+                        }
+                    }
+                }
+            }
+            .nn{
+                margin-top:15px; 
+                margin-left:11px;
+                color:color('negro'); 
+                font-weight:bold;
+            }
+        }
+    }

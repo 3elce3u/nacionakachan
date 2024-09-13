@@ -1,0 +1,198 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
+.mainComent {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 157px 1fr;
+    grid-template-rows: auto minmax(55px auto);
+    grid-template-areas:
+        "ava caja"
+        "ava bbc ";
+    .comentAvatar {
+        grid-area: ava;
+    }
+    .comentar {
+        grid-area: caja;
+    }
+    .comentCaja {
+        height: 155px;
+        width: 100%;
+        display: flex;
+        margin: 0;
+        border: solid 1px #999;
+        border-radius: 5px 5px 0 0;
+        box-sizing: border-box;
+        textarea {
+            resize: none;
+            height: 150px;
+            width: 100%;
+            outline: none;
+            margin: 0;
+            font-size: 16px;
+            line-height: 27px;
+            border-radius: 5px 5px 0 0;
+            border: none;
+        }
+    }
+    .bbc {
+        grid-area: bbc;
+        outline:none; 
+        margin:0;
+        margin-top:-5px; 
+        font-size:16px; 
+        line-height:27px;     
+        border:solid 1px #999; 
+        border-radius: 0 0 5px 5px;
+        width: 100% !important;
+        $resultado: calc((100% - 163px) / 20);
+        display: grid;
+        box-sizing: border-box;
+        background-color: color(blanco);
+        grid-gap: minmax(0px, 10px);
+        grid-template-columns: repeat(20, $resultado) 163px;
+        grid-template-rows: 55px;
+        grid-template-areas: "bt1 bt2 bt3 bt4 bt5 bt6 bt7 bt8 bt9 bt10 bt11 bt12 bt13 bt14 bt15 bt16 bt17 bt18 bt19 bt20 btComent";
+        .bt1 {
+            grid-area: bt1;
+            margin: auto;
+        }
+        .bt2 {
+            grid-area: bt2;
+            margin: auto;
+        }
+        .bt3 {
+            grid-area: bt3;
+            margin: auto;
+        }
+        .bt4 {
+            grid-area: bt4;
+            margin: auto;
+        }
+        .bt5 {
+            grid-area: bt5;
+            margin: auto;
+        }
+        .bt6 {
+            grid-area: bt6;
+            margin: auto;
+        }
+        .bt7 {
+            grid-area: bt7;
+            margin: auto;
+        }
+        .bt8 {
+            grid-area: bt8;
+            margin: auto;
+        }
+        .bt9 {
+            grid-area: bt9;
+            margin: auto;
+        }
+        .bt10 {
+            grid-area: bt10;
+            margin: auto;
+        }
+        .bt11 {
+            grid-area: bt11;
+            margin: auto;
+        }
+        .bt12 {
+            grid-area: bt12;
+            margin: auto;
+        }
+        .bt13 {
+            grid-area: bt13;
+            margin: auto;
+        }
+        .bt14 {
+            grid-area: bt14;
+            margin: auto;
+        }
+        .bt15 {
+            grid-area: bt15;
+
+            margin: auto;
+        }
+        .bt16 {
+            grid-area: bt16;
+            margin: auto;
+        }
+        .bt17 {
+            grid-area: bt17;
+            margin: auto;
+        }
+        .bt18 {
+            grid-area: bt18;
+            margin: auto;
+        }
+        .bt19 {
+            grid-area: bt19;
+            margin: auto;
+        }
+        .bt20 {
+            grid-area: bt20;
+            margin: auto;
+        }
+        .btComent {
+            grid-area: btComent;
+            width: 163px !important;
+            margin: auto;
+        }
+    }
+}
+@media only screen and (max-width: 1550px) {
+    .mainComent {
+        display: grid;
+        grid-gap: 4px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(55px auto);
+        grid-template-areas:
+            " caja"
+            " bbc ";
+        .comentAvatar {
+            grid-area: ava;
+            display: none;
+        }
+    }
+}
+@media only screen and (max-width: 1350px) {
+    .mainComent {
+        display: grid;
+        grid-gap: 4px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(55px auto);
+        grid-template-areas:" caja"
+                            " bbc ";
+        .bbc {
+            grid-area: bbc;
+            display: grid;
+            height:auto;
+            grid-template-columns: repeat(7, 1fr) 163px;
+            grid-template-rows: repeat(3, 45px);
+            grid-template-areas:"bt1  bt2  bt3  bt4  bt5  bt6  bt7   btComent "
+                                "bt8  bt9  bt10 bt11 bt12 bt13 bt14  nadaa    "
+                                "bt15 bt16 bt17 bt18 bt19 bt20 nada  nada     ";
+        }
+    }
+}
+@media only screen and (max-width: 400px) {
+    .mainComent {
+        display: grid;
+        grid-gap: 4px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(55px auto);
+        grid-template-areas:" caja"
+                            " bbc ";
+        .bbc {
+            grid-area: bbc;
+            display: grid;
+            height:auto;
+            grid-template-columns: repeat(7, 1fr) ;
+            grid-template-rows: 55px repeat(3, 45px);
+            grid-template-areas:"btComent btComent btComent btComent btComent btComent btComent"
+                                "bt1  bt2  bt3  bt4  bt5  bt6  bt7  "
+                                "bt8  bt9  bt10 bt11 bt12 bt13 bt14 "
+                                "bt15 bt16 bt17 bt18 bt19 bt20 nada ";
+        }
+    }
+}

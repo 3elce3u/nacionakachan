@@ -1,0 +1,14 @@
+@mixin alertas($h,$w,$bg,$cl,$sdw,$pos,$top,$lft,$brd,$rad,$dis,$z){
+    height:$h;
+    width:$w;
+    background-color: $bg;
+    color: $cl;
+    box-shadow: $sdw;
+    position: $pos;
+    top:$top;
+    left: $lft;
+    border:$brd;
+    border-radius: $rad;
+    display: $dis;
+    z-index:$z;
+    }

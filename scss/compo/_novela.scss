@@ -1,0 +1,113 @@
+.principalNovela{
+    min-height: auto;
+    box-sizing: border-box;
+    max-width: 100%;
+    border-radius:5px; 
+    background-color:rgba(208, 91, 255, 0.1); 
+    padding:9px 2px; 
+    margin:0; 
+    margin-top:10px; 
+    border:solid 1px rgba(208, 91, 255, 1);
+    display: grid;
+    grid-gap: 5px;
+    grid-column-gap: 9px;
+    grid-template-columns:220px 1fr;
+    grid-template-rows: repeat(2, 50px) minmax(60px, auto) repeat(4,35px) auto;
+    grid-template-areas:"caratula nombre     "
+                        "caratula nombreo    "
+                        "caratula generos    "
+                        "caratula escritor   "
+                        "caratula ilustrador "
+                        "caratula editorial  " 
+                        "caratula fansub     "
+                        "sinopsis sinopsis   ";
+    .nombreNovela{ 
+        grid-area: nombre;
+
+    }
+    .nombreOriginalNovela{
+        grid-area: nombreo;
+    }
+    .generosNovela{
+        grid-area: generos;
+    }
+    .caratulaNovela{
+        grid-area: caratula;
+        margin:3px!important;
+    }
+    .escritorNovela{
+        grid-area: escritor;
+    }
+    .ilustradorNovela{
+        grid-area: ilustrador;
+    }
+    .editorialNovela{
+        grid-area: editorial;
+    }   
+    .fansubNovela{
+        grid-area: fansub;
+    }
+    .sinopsisNovela{
+        grid-area: sinopsis;
+        blockquote{
+            line-height: 27px;
+            margin:5px!important;
+       }
+    }
+}
+@media only screen and (max-width: 1425px){
+    .principalNovela{
+        width:100%; 
+        border-radius:5px; 
+        background-color:rgba(208, 91, 255, 0.1); 
+        padding:9px 2px; 
+        margin:0; 
+        margin-top:10px; 
+        border:solid 1px rgba(208, 91, 255, 1);
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns:1fr;
+        grid-template-rows: repeat(2, minmax(50px,auto)) 320px minmax(80px,auto) repeat(4,30px) auto;
+        grid-template-areas:"nombre     "
+                            "nombreo    "
+                            "caratula   "
+                            "generos    "
+                            "escritor   "
+                            "ilustrador "
+                            "editorial  " 
+                            "fansub     "
+                            "sinopsis   ";
+        .nombreNovela{ 
+            grid-area: nombre;
+    
+        }
+        .nombreOriginalNovela{
+            grid-area: nombreo;
+        }
+        .generosNovela{
+            grid-area: generos;
+        }
+        .caratulaNovela{
+            grid-area: caratula;
+        }
+        .escritorNovela{
+            grid-area: escritor;
+        }
+        .ilustradorNovela{
+            grid-area: ilustrador;
+        }
+        .editorialNovela{
+            grid-area: editorial;
+        }   
+        .fansubNovela{
+            grid-area: fansub;
+        }
+        .sinopsisNovela{
+            grid-area: sinopsis;
+            blockquote{
+                 margin:5px!important;
+            }
+           
+        }
+    }
+}

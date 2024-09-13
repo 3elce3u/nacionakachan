@@ -1,0 +1,15 @@
+.new_pass{
+    @extend .login;
+    .close{
+        @extend .close;
+    }
+    h3{
+        @extend h3;
+    }
+    input{
+        @extend input;
+    }
+    .btn-new_pass{
+        @extend .btn-login;
+    }
+}

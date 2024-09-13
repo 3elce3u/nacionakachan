@@ -1,0 +1,4 @@
+@function color($nombre)
+{
+    @return map-get($map: $paleta, $key: $nombre);
+}

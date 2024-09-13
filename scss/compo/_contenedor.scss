@@ -1,0 +1,275 @@
+.contenedor{
+    display:grid;
+    margin:0;
+    padding:0;
+    width: 100%;
+    min-height: 950px;
+    row-gap:11px;
+    column-gap:11px;
+    background-color: color('blanco');
+    grid-template-columns:50px 2.5fr 7.5fr 2.5fr 50px;
+    grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+    grid-template-areas:"margi nav      nav      nav      margd"
+                        "margi headerr  headerr  headerr  margd" 
+                        "margi main_nav main_nav main_nav margd"
+                        "margi asidea   main     asideb   margd"
+                        "margi footer   footer   footer   margd";
+}
+@media only screen and (max-width: 1865px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 7.5fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1765px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 7fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1700px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 6fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1565px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 5fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1425px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 4fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1290px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 3fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1160px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 2.5fr 2.5fr;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(50px, auto) 50px;
+        grid-template-areas:" nav      nav      nav      "
+                            " headerr  headerr  headerr  " 
+                            " main_nav main_nav main_nav "
+                            " asidea   main     asideb   "
+                            " footer   footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1160px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 5fr ;
+        grid-template-rows:50px 190px minmax(50px, auto) repeat(2,minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      nav      "
+                            " headerr  headerr  " 
+                            " main_nav main_nav "
+                            " asidea   main     "
+                            " asideb   main   "    
+                            " footer   footer   ";
+    }
+}
+@media only screen and (max-width: 1080px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 4fr ;
+        grid-template-rows:50px 190px minmax(50px, auto) repeat(2,minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      nav      "
+                            " headerr  headerr  " 
+                            " main_nav main_nav "
+                            " asidea   main     "
+                            " asideb   main   "    
+                            " footer   footer   ";
+    }
+}
+@media only screen and (max-width: 940px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:2.5fr 3fr ;
+        grid-template-rows:50px 190px minmax(50px, auto) repeat(2,minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      nav      "
+                            " headerr  headerr  " 
+                            " main_nav main_nav "
+                            " asidea   main     "
+                            " asideb   main   "    
+                            " footer   footer   ";
+    }
+}
+@media only screen and (max-width: 800px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:1fr 1fr ;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(0px ,auto) repeat(2, minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      nav      "
+                            " headerr  headerr  " 
+                            " main_nav main_nav "
+                            " filtros  filtros  "
+                            " main     main     "
+                            " asidea   asideb   "    
+                            " footer   footer   ";
+    }
+}
+@media only screen and (max-width: 600px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:100% ;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(0px ,auto) repeat(3, minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      "
+                            " headerr  " 
+                            " main_nav "
+                            " filtros  "
+                            " main     "
+                            " asidea   "
+                            " asideb   "     
+                            " footer   ";
+    }
+}
+@media only screen and (max-width: 405px){
+    .contenedor{
+        display:grid;
+        margin:0;
+        padding:0;
+        width: 100%;
+        min-height: 950px;
+        row-gap:11px;
+        column-gap:11px;
+        background-color: color('blanco');
+        grid-template-columns:100% ;
+        grid-template-rows:50px 190px minmax(50px, auto) minmax(0px ,auto) repeat(3, minmax(50px, auto)) 50px;
+        grid-template-areas:" nav      "
+                            " headerr  " 
+                            " main_nav "
+                            " filtros  "
+                            " main     "
+                            " asidea   "
+                            " asideb   "     
+                            " footer   ";
+    }
+}
